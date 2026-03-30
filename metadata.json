@@ -1,0 +1,7 @@
+{
+  "name": "Kamal Batra & Associates",
+  "description": "Premium corporate website for Kamal Batra & Associates, a Chartered Accountant firm in Chandigarh, India.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

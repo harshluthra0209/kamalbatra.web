@@ -1,0 +1,132 @@
+import { motion } from 'motion/react';
+import { ArrowRight, TrendingUp, ShieldCheck, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { caseStudies } from '../data/caseStudies';
+
+export default function CaseStudies() {
+  return (
+    <div className="bg-background min-h-screen bg-grain">
+      {/* Header */}
+      <div className="bg-primary text-white py-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B68D40_1px,transparent_1px)] [background-size:40px_40px]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <span className="inline-block px-4 py-1.5 bg-accent/20 text-accent text-[10px] font-bold tracking-[0.3em] uppercase rounded-full mb-8 border border-accent/30">
+              Proven Results
+            </span>
+            <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 leading-tight">Case Studies</h1>
+            <p className="text-xl text-gray-300 max-w-2xl font-light leading-relaxed italic">
+              Real-world examples of how we've helped our clients navigate complex financial landscapes and achieve sustainable growth.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Case Studies Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {caseStudies.map((study, idx) => (
+            <motion.div
+              key={study.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.8 }}
+              className="group bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 border border-accent/5"
+            >
+              <div className="relative h-80 overflow-hidden">
+                <img 
+                  src={study.image} 
+                  alt={study.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-60" />
+                <div className="absolute top-8 left-8">
+                  <span className="px-4 py-2 bg-accent text-white text-[10px] font-bold uppercase tracking-widest rounded-full shadow-lg">
+                    {study.category}
+                  </span>
+                </div>
+              </div>
+              
+              <div className="p-12">
+                <h3 className="text-3xl font-serif font-bold text-primary mb-6 leading-tight group-hover:text-accent transition-colors duration-300">
+                  {study.title}
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-10 line-clamp-3">
+                  {study.challenge}
+                </p>
+                
+                <div className="grid grid-cols-3 gap-6 mb-12 py-8 border-y border-accent/10">
+                  {study.stats.map((stat, sIdx) => (
+                    <div key={sIdx} className="text-center">
+                      <div className="text-2xl font-serif font-bold text-primary mb-1">{stat.value}</div>
+                      <div className="text-[10px] text-accent font-bold uppercase tracking-widest">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <Link 
+                  to={`/case-studies/${study.id}`}
+                  className="inline-flex items-center text-[11px] font-bold text-primary uppercase tracking-[0.3em] group/btn"
+                >
+                  <span className="relative">
+                    View Full Case Study
+                    <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover/btn:w-full transition-all duration-300" />
+                  </span>
+                  <div className="ml-4 w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center group-hover/btn:bg-accent group-hover/btn:text-white transition-all duration-300">
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Trust Section */}
+      <section className="py-32 bg-primary text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+          <svg viewBox="0 0 400 400" className="w-full h-full">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-12 leading-tight">
+              Ready to achieve similar results for your business?
+            </h2>
+            <p className="text-xl text-gray-300 font-light mb-16 italic">
+              Our team of experts is ready to help you navigate your unique challenges and drive measurable success.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+              <Link 
+                to="/contact" 
+                className="bg-accent text-white px-12 py-6 rounded-xl font-bold text-[11px] uppercase tracking-[0.3em] hover:bg-accent/90 transition-all shadow-xl"
+              >
+                Schedule a Consultation
+              </Link>
+              <Link 
+                to="/services" 
+                className="text-white px-12 py-6 rounded-xl font-bold text-[11px] uppercase tracking-[0.3em] border border-white/20 hover:bg-white/10 transition-all"
+              >
+                Explore Our Services
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}

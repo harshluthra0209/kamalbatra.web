@@ -1,0 +1,113 @@
+import { ArrowRight, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
+import { getAllCapabilities } from '../data/capabilities';
+
+export default function Capabilities() {
+  const capabilities = getAllCapabilities();
+
+  return (
+    <div className="bg-background min-h-screen bg-grain">
+      {/* Header */}
+      <div className="bg-primary text-white py-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B68D40_1px,transparent_1px)] [background-size:40px_40px]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <span className="inline-block px-4 py-1.5 bg-accent/20 text-accent text-[10px] font-bold tracking-[0.3em] uppercase rounded-full mb-8 border border-accent/30">
+              Strategic Expertise
+            </span>
+            <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 leading-tight">Core Capabilities</h1>
+            <p className="text-xl text-gray-300 max-w-2xl font-light leading-relaxed italic">
+              Beyond traditional accounting, we provide strategic guidance to help ambitious businesses navigate complexity and achieve sustainable growth.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Capabilities Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
+          {capabilities.map((capability, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.8 }}
+              className="bg-white/80 backdrop-blur-sm p-12 rounded-3xl shadow-sm border border-accent/10 flex flex-col group hover:shadow-2xl transition-all duration-700"
+            >
+              <div className="w-16 h-16 bg-paper rounded-2xl flex items-center justify-center text-primary mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
+                <capability.icon className="w-8 h-8" />
+              </div>
+              <h3 className="text-3xl font-serif font-bold text-primary mb-6">{capability.title}</h3>
+              <p className="text-gray-600 mb-10 flex-grow text-lg font-light leading-relaxed">
+                {capability.shortDescription}
+              </p>
+              
+              <div className="mb-12">
+                <h4 className="text-[10px] font-bold text-accent uppercase tracking-[0.3em] mb-6">Key Focus Areas</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {capability.features.slice(0, 4).map((feature, i) => (
+                    <div key={i} className="flex items-center text-gray-700">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3 flex-shrink-0" />
+                      <span className="text-sm font-medium">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <Link to={`/capabilities/${capability.id}`} className="inline-flex items-center text-[11px] uppercase tracking-[0.3em] font-bold text-primary hover:text-accent transition-all mt-auto group/link">
+                Explore Capability <ArrowRight className="ml-3 w-5 h-5 group-hover/link:translate-x-2 transition-transform" />
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Methodology Section */}
+      <div className="bg-paper py-32 border-t border-accent/10 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -mr-48 -mt-48" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <span className="text-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-6 block">Our Approach</span>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-primary leading-tight">How We <span className="italic text-accent">Deliver</span> Value</h2>
+          </div>
+          
+          <div className="space-y-8">
+            <div className="p-12 bg-white/80 backdrop-blur-sm rounded-3xl shadow-sm border border-accent/10 hover:shadow-xl transition-all duration-500">
+              <h3 className="text-2xl font-serif font-bold text-primary mb-6 italic">Strategic Partnership</h3>
+              <p className="text-gray-600 leading-relaxed font-light text-lg">We don't just provide reports; we act as your strategic partners, offering insights that help you make informed decisions and drive your business forward.</p>
+            </div>
+            <div className="p-12 bg-white/80 backdrop-blur-sm rounded-3xl shadow-sm border border-accent/10 hover:shadow-xl transition-all duration-500">
+              <h3 className="text-2xl font-serif font-bold text-primary mb-6 italic">Data-Driven Insights</h3>
+              <p className="text-gray-600 leading-relaxed font-light text-lg">Leveraging advanced analytics and financial modeling, we turn complex data into clear, actionable strategies for growth and optimization.</p>
+            </div>
+            <div className="p-12 bg-white/80 backdrop-blur-sm rounded-3xl shadow-sm border border-accent/10 hover:shadow-xl transition-all duration-500">
+              <h3 className="text-2xl font-serif font-bold text-primary mb-6 italic">Continuous Improvement</h3>
+              <p className="text-gray-600 leading-relaxed font-light text-lg">Our methodology is built on the principle of continuous improvement, ensuring that your business processes evolve with the changing market landscape.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="bg-primary text-white p-16 md:p-24 rounded-[40px] text-center relative overflow-hidden"
+        >
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B68D40_1px,transparent_1px)] [background-size:40px_40px]" />
+          <h2 className="text-4xl md:text-7xl font-serif font-bold text-white mb-8 relative z-10">Ready to Elevate Your <br /><span className="italic text-accent">Business Strategy?</span></h2>
+          <p className="text-gray-400 mb-12 max-w-2xl mx-auto font-light text-lg relative z-10">
+            Schedule a confidential consultation with our senior advisory team to discuss your strategic objectives and how we can help you achieve them.
+          </p>
+          <Link to="/contact" className="inline-flex items-center bg-accent text-primary font-bold px-12 py-5 rounded-xl hover:bg-white transition-all uppercase tracking-widest text-sm relative z-10 group">
+            Book a Strategic Consultation <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
+      </div>
+    </div>
+  );
+}

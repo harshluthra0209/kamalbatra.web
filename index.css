@@ -1,0 +1,549 @@
+import { FileText, Landmark, ShieldAlert, LineChart, Globe, Calculator, Briefcase, FileSpreadsheet, PiggyBank, Scale, ArrowRightLeft } from 'lucide-react';
+
+export const servicesData = {
+  'gst-compliance': {
+    id: 'gst-compliance',
+    title: 'GST Compliance & Advisory',
+    icon: FileText,
+    category: 'Domestic',
+    shortDescription: 'End-to-end Goods and Services Tax solutions including registrations, returns, and audits.',
+    fullDescription: 'Our GST Compliance & Advisory service is designed to help businesses navigate the complex landscape of Goods and Services Tax in India. We provide end-to-end solutions, from initial registration to regular compliance and strategic advisory.',
+    scopeOfWork: [
+      'GST Registration and Amendments',
+      'Filing of Monthly/Quarterly Returns (GSTR-1, GSTR-3B)',
+      'Reconciliation of GSTR-2A/2B for ITC maximization',
+      'Filing of Annual Returns (GSTR-9) and Reconciliation Statement (GSTR-9C)',
+      'Handling GST Scrutiny, Notices, and Assessments',
+      'Advisory on complex GST implications for specific transactions'
+    ],
+    benefits: [
+      'Timely return filing avoiding penalties',
+      'Input Tax Credit (ITC) optimization',
+      'Representation before tax authorities',
+      'Peace of mind with 100% compliance'
+    ],
+    features: [
+      'Automated reconciliation with GSTR-2A/2B',
+      'Real-time status tracking of all filings',
+      'Dedicated GST helpdesk for urgent queries',
+      'Comprehensive annual audit support'
+    ],
+    valueDelivery: [
+      { title: 'Cost Efficiency', description: 'We identify and recover maximum Input Tax Credit, directly impacting your bottom line.' },
+      { title: 'Risk Mitigation', description: 'Our proactive approach prevents interest and penalties by ensuring 100% accuracy in filings.' },
+      { title: 'Strategic Insight', description: 'We provide data-driven insights to help you understand your tax position and plan accordingly.' }
+    ],
+    process: [
+      { step: '01', title: 'Data Collection', description: 'We gather all sales and purchase data through secure digital channels.' },
+      { step: '02', title: 'Reconciliation', description: 'Our team performs rigorous cross-checks between your books and the GST portal.' },
+      { step: '03', title: 'Drafting & Review', description: 'Returns are drafted and subjected to a multi-level review process for accuracy.' },
+      { step: '04', title: 'Filing & Archiving', description: 'Once approved, returns are filed and all acknowledgments are securely archived.' }
+    ],
+    complianceChecklist: [
+      'Is the GSTIN active and correctly mapped?',
+      'Are all B2B invoices uploaded with correct GSTINs?',
+      'Has the HSN/SAC code been correctly applied to all items?',
+      'Is the Input Tax Credit (ITC) reconciled with GSTR-2B?',
+      'Have all reverse charge (RCM) liabilities been accounted for?'
+    ],
+    caseStudies: [
+      {
+        title: 'GST Refund Recovery',
+        challenge: 'An export-oriented unit had ₹45 Lakhs in blocked GST refunds due to documentation discrepancies.',
+        solution: 'We conducted a thorough audit of their export documents and filed revised refund applications with proper justifications.',
+        result: 'Successfully recovered 100% of the blocked refund within 60 days.'
+      }
+    ],
+    trustFactors: [
+      'GST Practitioners with 10+ years experience',
+      'Zero-error filing track record',
+      'Real-time compliance monitoring',
+      'Expert representation in GST audits'
+    ]
+  },
+  'income-tax': {
+    id: 'income-tax',
+    title: 'Income Tax Planning & Filing',
+    icon: Landmark,
+    category: 'Domestic',
+    shortDescription: 'Strategic tax planning for individuals, HUFs, partnerships, and corporations. We ensure compliance with the Income Tax Act, 1961, while minimizing tax liabilities through legal exemptions and deductions.',
+    fullDescription: 'We offer comprehensive Income Tax services ensuring compliance with the Income Tax Act, 1961. Our strategic approach helps minimize tax liabilities through legal exemptions and deductions while maintaining strict adherence to regulatory requirements.',
+    scopeOfWork: [
+      'Corporate and Individual Tax Return Filing',
+      'Tax Planning and Structuring',
+      'TDS/TCS Compliance and Return Filing',
+      'Handling Income Tax Scrutiny and Assessments',
+      'Appeals before CIT(A) and ITAT',
+      'International Taxation and Transfer Pricing Advisory'
+    ],
+    benefits: [
+      'Corporate tax returns',
+      'TDS/TCS compliance',
+      'Tax assessment assistance',
+      'Proactive tax planning strategies'
+    ],
+    features: [
+      'Advanced tax projection models',
+      'Digital document management vault',
+      'Automated TDS reconciliation',
+      'Expert representation in assessments'
+    ],
+    valueDelivery: [
+      { title: 'Tax Optimization', description: 'We utilize every legal provision to ensure you pay only what is necessary, maximizing your wealth.' },
+      { title: 'Compliance Security', description: 'Our deep knowledge of the Income Tax Act ensures your filings are robust and defensible.' },
+      { title: 'Future Readiness', description: 'We help you plan for future tax implications of your current financial decisions.' }
+    ],
+    process: [
+      { step: '01', title: 'Tax Audit', description: 'A thorough review of your financial records to identify tax-sensitive areas.' },
+      { step: '02', title: 'Strategy Design', description: 'Developing a customized tax plan that aligns with your financial goals.' },
+      { step: '03', title: 'Implementation', description: 'Executing the tax plan through accurate filings and documentation.' },
+      { step: '04', title: 'Ongoing Support', description: 'Continuous monitoring and support for any queries or assessments.' }
+    ],
+    complianceChecklist: [
+      'Are all income sources (salary, house property, capital gains) disclosed?',
+      'Have all eligible deductions under Chapter VI-A been claimed?',
+      'Is the TDS/TCS credit reconciled with Form 26AS/AIS/TIS?',
+      'Are foreign assets and income correctly reported (if applicable)?',
+      'Has the correct ITR form been selected based on the income profile?'
+    ],
+    trustFactors: [
+      'Confidentiality and data security',
+      'Up-to-date knowledge of tax laws',
+      'Personalized tax optimization',
+      'Timely and accurate filings'
+    ]
+  },
+  'statutory-audit': {
+    id: 'statutory-audit',
+    title: 'Statutory & Internal Audit',
+    icon: ShieldAlert,
+    category: 'Domestic',
+    shortDescription: 'Independent, objective assurance services designed to add value and improve your organization\'s operations. We conduct statutory audits under the Companies Act and comprehensive internal audits to strengthen controls.',
+    fullDescription: 'Our audit and assurance services are designed to add value and improve your organization\'s operations. With extensive experience auditing banks, PSUs, and private corporations, we bring a robust, risk-based approach to every engagement.',
+    scopeOfWork: [
+      'Statutory Audits under the Companies Act',
+      'Internal and Management Audits',
+      'Bank Audits (Concurrent, Revenue, Stock)',
+      'Tax Audits under section 44AB of the Income Tax Act',
+      'Information Systems Audit',
+      'Fixed Asset Verification and Certification'
+    ],
+    benefits: [
+      'Risk management',
+      'Process optimization',
+      'Regulatory compliance assurance',
+      'Credibility with stakeholders and investors'
+    ],
+    features: [
+      'Risk-based audit methodology',
+      'Data analytics for anomaly detection',
+      'Internal control framework assessment',
+      'Detailed management recommendation reports'
+    ],
+    valueDelivery: [
+      { title: 'Operational Excellence', description: 'Our internal audits identify bottlenecks and inefficiencies, helping you streamline operations.' },
+      { title: 'Stakeholder Trust', description: 'Independent statutory audits provide the transparency and credibility required by investors and banks.' },
+      { title: 'Fraud Prevention', description: 'Robust audit procedures act as a strong deterrent and detection mechanism for financial irregularities.' }
+    ],
+    process: [
+      { step: '01', title: 'Planning', description: 'Understanding your business environment and identifying key risk areas.' },
+      { step: '02', title: 'Fieldwork', description: 'Executing audit procedures, testing controls, and gathering evidence.' },
+      { step: '03', title: 'Reporting', description: 'Drafting reports with findings and actionable management recommendations.' },
+      { step: '04', title: 'Follow-up', description: 'Reviewing the implementation of agreed-upon recommendations.' }
+    ],
+    complianceChecklist: [
+      'Are the financial statements prepared as per applicable AS/Ind AS?',
+      'Has the internal control over financial reporting (ICFR) been tested?',
+      'Are all statutory dues (PF, ESI, GST, TDS) paid on time?',
+      'Is there proper documentation for related party transactions?',
+      'Have all significant accounting estimates been reviewed for bias?'
+    ],
+    caseStudies: [
+      {
+        title: 'Internal Control Strengthening',
+        challenge: 'A manufacturing company was experiencing high inventory shrinkage and procurement leakages.',
+        solution: 'We implemented a robust internal audit framework focusing on the P2P (Procure-to-Pay) cycle and inventory management.',
+        result: 'Reduced inventory variance by 15% and identified ₹12 Lakhs in annual procurement savings.'
+      }
+    ],
+    trustFactors: [
+      'Independent and objective perspective',
+      'Adherence to International Auditing Standards',
+      'Focus on value-added recommendations',
+      'Rigorous quality control processes'
+    ]
+  },
+  'corporate-advisory': {
+    id: 'corporate-advisory',
+    title: 'Corporate Advisory & Incorporations',
+    icon: LineChart,
+    category: 'Domestic',
+    shortDescription: 'Guidance through the entire business lifecycle. From incorporating a Private Limited Company or LLP to ROC compliance, FEMA regulations, and strategic financial consulting.',
+    fullDescription: 'We provide strategic corporate advisory services to help businesses structure themselves optimally for growth. From the initial stages of incorporation to ongoing corporate governance and compliance, our team acts as your trusted advisors.',
+    scopeOfWork: [
+      'Company and LLP Incorporation',
+      'ROC Annual Filings and Compliance',
+      'FEMA and RBI Compliance',
+      'Mergers, Acquisitions, and Due Diligence',
+      'Drafting of Business Agreements and Deeds',
+      'Startup India Registration and Advisory'
+    ],
+    benefits: [
+      'Entity structuring',
+      'ROC annual filings',
+      'Due diligence services',
+      'Smooth execution of corporate restructuring'
+    ],
+    features: [
+      'End-to-end incorporation support',
+      'Virtual CFO services for startups',
+      'Corporate governance health checks',
+      'Strategic M&A advisory'
+    ],
+    valueDelivery: [
+      { title: 'Strategic Growth', description: 'We help you choose the right legal structure that supports your long-term business objectives.' },
+      { title: 'Regulatory Ease', description: 'Our team handles all ROC and FEMA complexities, allowing you to focus on core business.' },
+      { title: 'Investment Readiness', description: 'Proper compliance and structuring make your business more attractive to VCs and investors.' }
+    ],
+    process: [
+      { step: '01', title: 'Consultation', description: 'Discussing your business model and identifying the ideal legal structure.' },
+      { step: '02', title: 'Documentation', description: 'Preparing all necessary charters, agreements, and application forms.' },
+      { step: '03', title: 'Registration', description: 'Liaising with government authorities for swift entity incorporation.' },
+      { step: '04', title: 'Post-Incubation', description: 'Setting up initial compliance frameworks and governance protocols.' }
+    ]
+  },
+  'outsourced-bookkeeping': {
+    id: 'outsourced-bookkeeping',
+    title: 'Outsourced Bookkeeping (UK/Canada)',
+    icon: FileSpreadsheet,
+    category: 'International',
+    shortDescription: 'Accurate, timely, and compliant bookkeeping for international firms. We manage your ledgers using Xero, QuickBooks, and Sage, ensuring your financial records are always up-to-date and ready for year-end accounts.',
+    fullDescription: 'We act as an extended back-office for CPA and accounting firms in the UK and Canada. Our team is highly proficient in international accounting standards and cloud accounting software, ensuring your clients\' books are always accurate and up-to-date.',
+    scopeOfWork: [
+      'Daily/Weekly Ledger Management',
+      'Bank and Credit Card Reconciliation',
+      'VAT/GST Return Preparation',
+      'Management Reporting and Dashboards',
+      'Migration to Cloud Accounting Platforms',
+      'Catch-up and Cleanup Bookkeeping'
+    ],
+    benefits: [
+      'Bank reconciliation',
+      'VAT/GST return preparation',
+      'Management reporting',
+      'Seamless integration with your existing team'
+    ],
+    features: [
+      'Multi-currency ledger management',
+      'Cloud-based real-time collaboration',
+      'Automated bank feed reconciliation',
+      'Customized management dashboards'
+    ],
+    valueDelivery: [
+      { title: 'Scalability', description: 'Scale your accounting operations without the overhead of hiring and training in-house staff.' },
+      { title: 'Accuracy', description: 'Our specialized team ensures zero errors in ledger management and reconciliations.' },
+      { title: 'Cost Savings', description: 'Reduce operational costs by up to 50% while maintaining high-quality output.' }
+    ],
+    process: [
+      { step: '01', title: 'Onboarding', description: 'Setting up secure access and defining workflows with your team.' },
+      { step: '02', title: 'Processing', description: 'Daily or weekly processing of transactions and reconciliations.' },
+      { step: '03', title: 'Review', description: 'Internal quality checks to ensure compliance with local standards.' },
+      { step: '04', title: 'Reporting', description: 'Delivery of accurate financial records and management reports.' }
+    ],
+    caseStudies: [
+      {
+        title: 'UK Practice Outsourcing',
+        challenge: 'A London-based accounting firm was struggling with high staff costs and backlogs during the self-assessment season.',
+        solution: 'We took over their entire bookkeeping and VAT return processing using Xero and Dext.',
+        result: 'Reduced their operational costs by 45% and eliminated all backlogs within 3 months.'
+      }
+    ],
+    trustFactors: [
+      'Certified Xero and QuickBooks ProAdvisors',
+      'Secure and encrypted data transfer',
+      'Scalable team to handle volume spikes',
+      'Consistent and timely reporting'
+    ]
+  },
+  'payroll-management': {
+    id: 'payroll-management',
+    title: 'Payroll Management',
+    icon: Calculator,
+    category: 'International',
+    shortDescription: 'End-to-end payroll processing for your overseas employees. We calculate PAYE, National Insurance (UK), CPP/EI (Canada), handle pension auto-enrolment, and generate payslips securely.',
+    fullDescription: 'Managing international payroll requires strict adherence to local labor and tax laws. We provide comprehensive payroll processing services for businesses and accounting firms in the UK and Canada, ensuring employees are paid accurately and on time.',
+    scopeOfWork: [
+      'End-to-end Payroll Processing (Weekly/Monthly)',
+      'Calculation of PAYE, National Insurance (UK)',
+      'Calculation of CPP, EI, and Income Tax (Canada)',
+      'Pension Auto-enrolment Management',
+      'Generation and Distribution of Secure Payslips',
+      'Year-end Payroll Reporting (P60s, T4s)'
+    ],
+    benefits: [
+      'HMRC / CRA compliance',
+      'Year-end payroll reporting',
+      'Employee query resolution',
+      'Secure handling of sensitive employee data'
+    ],
+    features: [
+      'Automated tax and NI calculations',
+      'Secure employee self-service portal',
+      'Pension auto-enrolment integration',
+      'Direct deposit file generation'
+    ],
+    valueDelivery: [
+      { title: 'Legal Compliance', description: 'Stay ahead of changing labor laws and tax regulations in the UK and Canada.' },
+      { title: 'Employee Satisfaction', description: 'Accurate and timely payments lead to a more motivated and satisfied workforce.' },
+      { title: 'Data Security', description: 'We use enterprise-grade security to protect your sensitive employee information.' }
+    ],
+    process: [
+      { step: '01', title: 'Data Input', description: 'Receiving timesheets and employee data through secure channels.' },
+      { step: '02', title: 'Calculation', description: 'Processing payroll, including taxes, benefits, and deductions.' },
+      { step: '03', title: 'Validation', description: 'Rigorous checks to ensure accuracy before final approval.' },
+      { step: '04', title: 'Distribution', description: 'Issuing payslips and filing necessary reports with authorities.' }
+    ]
+  },
+  'accounts-receivable-payable': {
+    id: 'accounts-receivable-payable',
+    title: 'Accounts Receivable & Payable',
+    icon: Briefcase,
+    category: 'International',
+    shortDescription: 'Streamline your cash flow with our AR/AP management. We process supplier invoices, manage payment runs, issue customer invoices, and handle credit control to reduce debtor days.',
+    fullDescription: 'Effective cash flow management is the lifeblood of any business. Our AR/AP services help international clients maintain healthy cash flows by ensuring timely invoicing, diligent credit control, and organized supplier payments.',
+    scopeOfWork: [
+      'Processing and Verification of Supplier Invoices',
+      'Managing Payment Runs and Schedules',
+      'Issuing Customer Invoices and Statements',
+      'Credit Control and Aged Debtor Chasing',
+      'Supplier Statement Reconciliation',
+      'Expense Claim Processing'
+    ],
+    benefits: [
+      'Improved cash flow',
+      'Supplier statement reconciliation',
+      'Aged debtor chasing',
+      'Clear visibility into short-term liabilities'
+    ],
+    features: [
+      'Automated invoice processing',
+      'Advanced credit control workflows',
+      'Supplier portal integration',
+      'Real-time cash flow forecasting'
+    ],
+    valueDelivery: [
+      { title: 'Cash Flow Optimization', description: 'Reduce debtor days and improve liquidity through proactive credit control.' },
+      { title: 'Supplier Relations', description: 'Maintain strong relationships through timely and accurate payments.' },
+      { title: 'Operational Efficiency', description: 'Automate repetitive tasks and reduce manual errors in your AR/AP cycles.' }
+    ],
+    process: [
+      { step: '01', title: 'Invoice Receipt', description: 'Capturing and verifying all incoming and outgoing invoices.' },
+      { step: '02', title: 'Verification', description: 'Cross-checking invoices against purchase orders and receipts.' },
+      { step: '03', title: 'Processing', description: 'Entering data into accounting systems and scheduling payments.' },
+      { step: '04', title: 'Reconciliation', description: 'Regularly reconciling statements to ensure zero discrepancies.' }
+    ]
+  },
+  'year-end-accounts': {
+    id: 'year-end-accounts',
+    title: 'Year-End Accounts Preparation',
+    icon: Globe,
+    category: 'International',
+    shortDescription: 'Preparation of statutory accounts for Limited Companies, Partnerships, and Sole Traders in the UK and Canada. We draft the accounts in compliance with local GAAP (e.g., FRS 102, ASPE) ready for your review.',
+    fullDescription: 'We support international accounting practices by drafting year-end statutory accounts and tax computations. Our team ensures all working papers are meticulously prepared and cross-referenced, ready for final partner review.',
+    scopeOfWork: [
+      'Drafting Financial Statements (Limited Companies, Sole Traders)',
+      'Compliance with FRS 102, FRS 105 (UK) or ASPE (Canada)',
+      'Preparation of Corporation Tax Computations',
+      'Creation of Comprehensive Working Paper Files',
+      'Lead Schedule Preparation',
+      'Resolving Year-end Queries'
+    ],
+    benefits: [
+      'Drafting financial statements',
+      'Corporation tax computations',
+      'Working paper files',
+      'Ability to handle peak season volume spikes'
+    ],
+    features: [
+      'Compliance with FRS 102/105 and ASPE',
+      'Comprehensive working paper files',
+      'Corporation tax computation support',
+      'Partner-ready final drafts'
+    ],
+    valueDelivery: [
+      { title: 'Peak Season Relief', description: 'Offload your year-end volume to our specialized team during busy periods.' },
+      { title: 'Technical Accuracy', description: 'Ensure all statutory accounts are compliant with the latest local GAAP.' },
+      { title: 'Focus on Strategy', description: 'Free up your senior partners to focus on high-value client advisory.' }
+    ],
+    process: [
+      { step: '01', title: 'Trial Balance Review', description: 'Initial review of the trial balance and supporting documents.' },
+      { step: '02', title: 'Drafting', description: 'Preparing the financial statements and tax computations.' },
+      { step: '03', title: 'Quality Check', description: 'Rigorous internal review against local accounting standards.' },
+      { step: '04', title: 'Final Delivery', description: 'Providing partner-ready accounts and working paper files.' }
+    ]
+  },
+  'tax-planning': {
+    id: 'tax-planning',
+    title: 'Tax Planning & Strategy',
+    icon: PiggyBank,
+    category: 'Domestic',
+    shortDescription: 'Proactive tax planning to minimize liabilities and maximize savings for individuals and corporations.',
+    fullDescription: 'Our Tax Planning & Strategy service goes beyond basic compliance. We proactively analyze your financial situation to develop strategies that minimize your tax burden while remaining fully compliant with the Income Tax Act.',
+    scopeOfWork: [
+      'Comprehensive review of current tax position',
+      'Identification of tax-saving opportunities and exemptions',
+      'Structuring of salary and compensation packages',
+      'Capital gains tax planning and reinvestment strategies',
+      'Succession and estate tax planning'
+    ],
+    benefits: [
+      'Significant reduction in tax liabilities',
+      'Optimized cash flow and savings',
+      'Long-term wealth preservation',
+      'Complete peace of mind regarding compliance'
+    ],
+    features: [
+      'Customized tax projection tools',
+      'Succession planning frameworks',
+      'Investment tax impact analysis',
+      'Quarterly tax health checks'
+    ],
+    valueDelivery: [
+      { title: 'Wealth Preservation', description: 'Protect your hard-earned assets through intelligent tax structuring.' },
+      { title: 'Proactive Savings', description: 'Identify savings opportunities before the financial year ends.' },
+      { title: 'Legal Safety', description: 'All strategies are strictly within the framework of the law.' }
+    ],
+    process: [
+      { step: '01', title: 'Analysis', description: 'Deep dive into your current financial and tax situation.' },
+      { step: '02', title: 'Strategy', description: 'Designing a bespoke tax plan with multiple scenarios.' },
+      { step: '03', title: 'Execution', description: 'Implementing the chosen strategies through proper documentation.' },
+      { step: '04', title: 'Monitoring', description: 'Regular reviews to adapt to changing laws or financial status.' }
+    ],
+    caseStudies: [
+      {
+        title: 'HNI Tax Optimization',
+        challenge: 'A High Net-worth Individual was facing significant tax leakage due to unoptimized investment structures.',
+        solution: 'We restructured their portfolio across various tax-efficient instruments and utilized specific exemptions under Section 54.',
+        result: 'Achieved a 22% reduction in annual tax liability while maintaining full compliance.'
+      }
+    ]
+  },
+  'company-law-compliance': {
+    id: 'company-law-compliance',
+    title: 'Company Law Compliance',
+    icon: Scale,
+    category: 'Domestic',
+    shortDescription: 'Expert guidance on Companies Act compliance, secretarial services, and corporate governance.',
+    fullDescription: 'Navigating the complexities of the Companies Act requires expert knowledge. We provide comprehensive secretarial and compliance services to ensure your company meets all statutory obligations and maintains robust corporate governance.',
+    scopeOfWork: [
+      'Maintenance of statutory registers and records',
+      'Preparation and filing of annual returns (AOC-4, MGT-7)',
+      'Drafting of minutes for board and general meetings',
+      'Assistance with changes in directors, capital, or registered office',
+      'Advisory on corporate governance best practices'
+    ],
+    benefits: [
+      'Avoidance of late filing fees and penalties',
+      'Maintained good standing with the Registrar of Companies',
+      'Streamlined board and shareholder meetings',
+      'Enhanced corporate reputation and governance'
+    ],
+    features: [
+      'Digital secretarial records',
+      'Automated compliance alerts',
+      'Board meeting facilitation',
+      'Corporate governance audits'
+    ],
+    valueDelivery: [
+      { title: 'Legal Integrity', description: 'Ensure your company remains in good standing with all regulatory bodies.' },
+      { title: 'Risk Management', description: 'Identify and mitigate potential governance risks before they escalate.' },
+      { title: 'Efficiency', description: 'Streamline your secretarial processes and board communications.' }
+    ],
+    process: [
+      { step: '01', title: 'Audit', description: 'Reviewing current secretarial records and compliance status.' },
+      { step: '02', title: 'Remediation', description: 'Fixing any past compliance gaps or record discrepancies.' },
+      { step: '03', title: 'Maintenance', description: 'Ongoing management of registers, minutes, and filings.' },
+      { step: '04', title: 'Advisory', description: 'Providing guidance on complex corporate law matters.' }
+    ],
+    caseStudies: [
+      {
+        title: 'Governance Restructuring',
+        challenge: 'A mid-sized firm was struggling with legacy compliance gaps that hindered their fundraising efforts.',
+        solution: 'Conducted a comprehensive secretarial audit and remediated three years of pending filings and registers.',
+        result: 'Successfully cleared all ROC defaults, enabling the client to secure Series A funding within 4 months.'
+      }
+    ]
+  },
+  'fema-compliance': {
+    id: 'fema-compliance',
+    title: 'Foreign Exchange Management (FEMA)',
+    icon: ArrowRightLeft,
+    category: 'International',
+    shortDescription: 'Critical advisory and compliance for cross-border transactions, FDI, and RBI regulations. We ensure your global investments and trade remain 100% compliant with the Foreign Exchange Management Act.',
+    fullDescription: 'In an increasingly globalized economy, FEMA compliance is the cornerstone of international business in India. We provide end-to-end support for inbound and outbound investments, ensuring every dollar moved is accounted for and compliant with RBI\'s stringent guidelines.',
+    scopeOfWork: [
+      'Advisory on Foreign Direct Investment (FDI) & Overseas Direct Investment (ODI)',
+      'Filing of FC-GPR, FC-TRS, and FLA returns with RBI',
+      'External Commercial Borrowings (ECB) compliance and reporting',
+      'Setting up Liaison, Branch, and Project Offices for foreign entities',
+      'Compounding of FEMA contraventions and representation before RBI',
+      'Advisory on Liberalised Remittance Scheme (LRS) for individuals'
+    ],
+    benefits: [
+      'Zero-penalty compliance track record',
+      'Seamless repatriation of funds',
+      'Expert liaisoning with Authorized Dealer (AD) banks',
+      'Strategic structuring of cross-border capital'
+    ],
+    features: [
+      'FEMA Regulatory Health Check',
+      'RBI FIRMS Portal management',
+      'Inbound/Outbound investment structuring',
+      'Compliance calendar for RBI filings'
+    ],
+    valueDelivery: [
+      { title: 'Global Mobility', description: 'Facilitate seamless cross-border movement of capital and investments.' },
+      { title: 'Regulatory Safety', description: 'Ensure 100% compliance with complex RBI and FEMA regulations, avoiding heavy compounding fees.' },
+      { title: 'Strategic Structuring', description: 'Optimize your international operations for tax and regulatory efficiency from day one.' }
+    ],
+    process: [
+      { step: '01', title: 'Regulatory Mapping', description: 'Identifying all FEMA and RBI regulations applicable to your specific transaction.' },
+      { step: '02', title: 'Transaction Structuring', description: 'Designing the most efficient and compliant path for fund movement.' },
+      { step: '03', title: 'Documentation & Filing', description: 'Preparing and submitting all required forms (FC-GPR, etc.) via the FIRMS portal.' },
+      { step: '04', title: 'AD Bank Liaison', description: 'Coordinating with Authorized Dealer banks to ensure smooth processing and closure.' }
+    ],
+    complianceChecklist: [
+      'Is the FDI under the Automatic or Approval route?',
+      'Has the FCGPR been filed within 30 days of allotment?',
+      'Is the entity compliant with sectoral caps?',
+      'Are annual FLA returns filed by July 15th?',
+      'Is the valuation certificate from a Chartered Accountant attached?',
+      'Has the ECB-2 return been filed monthly for foreign loans?',
+      'Is the LRS limit of $250,000 per year monitored for individuals?'
+    ],
+    caseStudies: [
+      {
+        title: 'FDI Compliance for Tech Startup',
+        challenge: 'A foreign investor wanted to infuse $2M into an Indian tech startup but was unsure about sectoral caps and reporting timelines.',
+        solution: 'We managed the entire FDI process, from valuation to FC-GPR filing on the FIRMS portal.',
+        result: 'Completed the investment cycle in record time with zero RBI queries or delays.'
+      },
+      {
+        title: 'FEMA Compounding Resolution',
+        challenge: 'A client had inadvertently violated FEMA norms regarding late filing of FC-TRS, facing potential heavy penalties.',
+        solution: 'We filed a compounding application with RBI, providing detailed justifications and supporting evidence.',
+        result: 'Successfully resolved the violation with a minimal compounding fee, saving the client over ₹10 Lakhs in potential penalties.'
+      }
+    ],
+    trustFactors: [
+      '100% success rate in RBI FIRMS portal filings',
+      'Expertise in handling complex compounding matters',
+      'Deep relationships with Authorized Dealer (AD) banks',
+      'Proactive monitoring of changing RBI master directions'
+    ]
+  }
+};
+
+export const getServiceById = (id: string) => servicesData[id as keyof typeof servicesData];
+export const getAllServices = () => Object.values(servicesData);
+export const getServicesByCategory = (category: string) => getAllServices().filter(s => s.category === category);
