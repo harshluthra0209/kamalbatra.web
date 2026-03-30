@@ -1,4 +1,4 @@
-import { FileText, Landmark, ShieldAlert, LineChart, Globe, Calculator, Briefcase, FileSpreadsheet, PiggyBank, Scale, ArrowRightLeft } from 'lucide-react';
+@import "tailwindcss";
 
 export const servicesData = {
   'gst-compliance': {
