@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, Mic, MicOff, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { GoogleGenAI, Modality } from '@google/genai';
-import { cn } from '../lib/utils';
+import { cn } from './lib/utils';
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
